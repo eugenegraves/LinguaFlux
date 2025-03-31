@@ -199,3 +199,322 @@ button:disabled:hover {
   transform: none;
   box-shadow: var(--box-shadow-outset);
 }
+
+.textarea-container {
+  position: relative;
+  width: 100%;
+}
+
+.language-swap-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .language-swap-container {
+    margin: 0;
+  }
+}
+
+.swap-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D4A276, #B87333);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--box-shadow-outset);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.swap-button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.swap-button svg {
+  width: 24px;
+  height: 24px;
+  stroke: white;
+  z-index: 2;
+}
+
+.swap-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42"><path d="M21 3C11.6 3 4 10.6 4 20s7.6 17 17 17 17-7.6 17-17S30.4 3 21 3zm0 2c8.3 0 15 6.7 15 15s-6.7 15-15 15S6 28.3 6 20 12.7 5 21 5zm0 2c-7.2 0-13 5.8-13 13s5.8 13 13 13 13-5.8 13-13S28.2 7 21 7zm0 2c6.1 0 11 4.9 11 11s-4.9 11-11 11S10 26.1 10 20 14.9 9 21 9z" fill="white"/></svg>');
+  background-size: cover;
+  opacity: 0;
+  z-index: 1;
+}
+
+.text-actions {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.icon-button:hover {
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+.icon-button svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--accent-color);
+  z-index: 2;
+}
+
+.icon-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon-button:disabled:hover {
+  transform: none;
+}
+
+/* Mandala frame for speak button */
+.mandala-frame {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--card-bg-gradient);
+  box-shadow: var(--box-shadow-outset);
+  transition: all 0.3s ease;
+}
+
+.mandala-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23A67B5B" stroke-width="1" stroke-dasharray="4 4"/><circle cx="50" cy="50" r="35" fill="none" stroke="%23A67B5B" stroke-width="1"/><path d="M50 10v80M10 50h80M26 26l48 48M26 74l48-48" fill="none" stroke="%23A67B5B" stroke-width="0.5" stroke-dasharray="2 2"/></svg>');
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.speak-button:hover .mandala-frame {
+  box-shadow: 0 0 12px rgba(166, 123, 91, 0.5);
+}
+
+.speak-button:hover .mandala-frame::before {
+  opacity: 0.5;
+}
+
+/* Woven circle for copy button */
+.woven-circle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--card-bg-gradient);
+  box-shadow: var(--box-shadow-outset);
+  transition: all 0.3s ease;
+}
+
+.woven-circle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 10c5 10 15 5 20 15s-5 15 5 20-5 15-15 20 5 15-15 20-15-5-20-15 5-15-5-20 5-15 15-20-5-15 15-20z" fill="none" stroke="%23A67B5B" stroke-width="1"/></svg>');
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.copy-button:hover .woven-circle {
+  box-shadow: 0 0 12px rgba(166, 123, 91, 0.5);
+}
+
+.copy-button:hover .woven-circle::before {
+  opacity: 0.5;
+}
+
+/* Tooltip */
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #8B5A2B;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #8B5A2B;
+}
+
+/* Ripple effect */
+.icon-button::after,
+.swap-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(212, 162, 118, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
+.icon-button:active::after,
+.swap-button:active::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: 0s;
+}
+
+.translate-button:active,
+.clear-button:active {
+  transform: scale(0.98);
+  box-shadow: var(--box-shadow-inset);
+}
+
+@keyframes ripple {
+  to {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.icon-button:active::after,
+.swap-button:active::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  animation: ripple 0.6s linear;
+}
+
+/* Material design ripple effect */
+.material-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.material-ripple .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(212, 162, 118, 0.4);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Ensure textarea is responsive */
+textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Add padding to textarea to accommodate the buttons */
+textarea {
+  padding-bottom: 40px;
+}
+
+/* Adjust responsiveness */
+@media (max-width: 480px) {
+  .swap-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .icon-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .mandala-frame,
+  .woven-circle {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .text-actions {
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+/* Make sure buttons get hover effect only on devices that support hover */
+@media (hover: hover) {
+  .speak-button:hover .mandala-frame,
+  .copy-button:hover .woven-circle {
+    box-shadow: 0 0 12px rgba(166, 123, 91, 0.5);
+  }
+}
