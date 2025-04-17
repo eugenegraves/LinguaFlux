@@ -25,9 +25,6 @@ const Globe = () => {
 
     // Create the globe geometry
     const geometry = new THREE.SphereGeometry(2, 64, 64);
-
-    // Texture loader
-    const textureLoader = new THREE.TextureLoader();
     
     // Create a texture for the globe - would be replaced with actual texture
     const texture = new THREE.CanvasTexture(createGlobeTexture());
